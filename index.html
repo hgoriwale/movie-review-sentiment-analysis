@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Sentiment Analysis</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="hero-text">
+            <h1>🎬 Movie Review Analyzer</h1>
+            <p>AI-powered sentiment analysis using Machine Learning</p>
+        </div>
+
+        <div class="card">
+            <form method="POST">
+                <textarea name="review" placeholder="Write your movie review here..." required></textarea>
+                <button type="submit">Analyze Sentiment</button>
+            </form>
+
+            {% if sentiment %}
+                <div class="result {{ 'positive' if 'Positive' in sentiment else 'negative' }}">
+                    {{ sentiment }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

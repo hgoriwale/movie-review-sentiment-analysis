@@ -1,0 +1,203 @@
+/* 🚀 Global Reset and Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Using 'Space Mono' or 'Rajdhani' for a futuristic/tech feel */
+    font-family: 'Poppins', sans-serif; /* Keeping Poppins as requested, but 'Rajdhani' or 'Space Mono' is more futuristic */
+}
+
+/* 🌌 Body and Background */
+body {
+    height: 100vh;
+    /* Simulate a deep space or tech grid background */
+    background: #0d1117; /* Dark, deep background color (GitHub dark theme) */
+    position: relative;
+    overflow: hidden; /* Hide potential scrollbar from animations */
+}
+
+/* 🔳 Neon Grid Overlay (Optional Futuristic Touch) */
+/* You would need to use a background image for a complex grid, 
+   but this enhances the dark mode feel. */
+/* .grid-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, transparent 95%, rgba(0, 255, 255, 0.08) 100%), 
+                      linear-gradient(90deg, transparent 95%, rgba(0, 255, 255, 0.08) 100%);
+    background-size: 50px 50px;
+    z-index: 1; 
+} */
+
+
+/* ✨ Dark Overlay (Subtle, for contrast) */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Lighter dark layer */
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(1px); /* Subtle blur effect */
+}
+
+/* 💻 Main Content Wrapper */
+.main {
+    position: relative;
+    z-index: 5; /* Ensure it's above all overlays */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e6edf3; /* Light, 'glowing' text color */
+    padding: 20px;
+}
+
+/* 🌟 Hero Text (Title Area) */
+.hero-text {
+    text-align: center;
+    margin-bottom: 40px;
+    /* Neon Text Effect */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #00ffff; /* Neon cyan */
+    letter-spacing: 2px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 8px;
+    color: #a3b1c6; /* Slightly muted color */
+}
+
+/* 💳 Card (The main input panel) */
+.card {
+    background: rgba(20, 25, 30, 0.9); /* Semi-transparent dark background */
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Subtle neon border */
+    width: 550px; /* Slightly wider card */
+    max-width: 90%;
+    padding: 40px;
+    border-radius: 18px;
+    text-align: center;
+    /* 3D/depth shadow for a floating effect */
+    box-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.1), /* Inner glow */
+        0 30px 60px rgba(0, 0, 0, 0.9); /* Deep outer shadow */
+    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother animation curve */
+}
+
+/* 📝 Textarea (Input Field) */
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #3a475a; /* Dark border */
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    background: #1e242c; /* Slightly lighter dark background */
+    color: #e6edf3;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea::placeholder {
+    color: #7c889a;
+}
+
+textarea:focus {
+    border-color: #00ffff; /* Neon focus color */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Neon focus glow */
+    background: #232b36;
+}
+
+/* 🔘 Button (The Action Button) */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #0d1117; /* Dark text on bright button */
+    /* Futuristic Gradient - Neon colors */
+    background: linear-gradient(135deg, #00ffff, #3a6ff7); 
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4); /* Button glow */
+    transition: 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.02);
+    /* Lighter gradient on hover */
+    background: linear-gradient(135deg, #33ffff, #5a87ff); 
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.6);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ✅ Result Box */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    transition: background 0.5s, color 0.5s;
+    /* Add subtle shadow for depth */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.result.positive {
+    background: rgba(27, 127, 60, 0.2); /* Dark, transparent green */
+    color: #4CAF50; /* Bright green text */
+    border: 1px solid #4CAF50;
+    /* Green neon text shadow */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+}
+
+.result.negative {
+    background: rgba(179, 38, 30, 0.2); /* Dark, transparent red */
+    color: #F44336; /* Bright red text */
+    border: 1px solid #F44336;
+    /* Red neon text shadow */
+    text-shadow: 0 0 5px rgba(244, 67, 54, 0.8);
+}
+
+/* 💫 Keyframe Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 📱 Media Query for responsiveness */
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .result {
+        font-size: 18px;
+    }
+}
